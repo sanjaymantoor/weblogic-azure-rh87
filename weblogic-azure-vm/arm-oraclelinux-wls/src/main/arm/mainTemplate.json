@@ -139,7 +139,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${start}",
+         "name": "b446fe15-5d43-5549-858d-4775741cd0ba",
          "properties": {
             "mode": "Incremental",
             "template": {
