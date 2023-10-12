@@ -109,7 +109,7 @@
         },
         {
             "type": "Microsoft.Resources/deploymentScripts",
-            "apiVersion": "${azure.apiVersionForDeploymentScript}",
+            "apiVersion": "2023-07-01",
             "name": "script-createAddCertificate",
             "location": "[parameters('location')]",
             "dependsOn": [
