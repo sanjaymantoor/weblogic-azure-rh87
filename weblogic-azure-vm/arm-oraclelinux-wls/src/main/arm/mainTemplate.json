@@ -223,7 +223,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForNetworkInterfaces}",
+         "apiVersion": "2015-06-15}",
          "type": "Microsoft.Network/networkInterfaces",
          "name": "[variables('name_nic')]",
          "location": "[parameters('location')]",

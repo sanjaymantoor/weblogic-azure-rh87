@@ -270,7 +270,7 @@
             "condition": "[and(empty(parameters('virtualNetworkName')), empty(variables('name_subnet')))]"
         },
         {
-            "apiVersion": "${azure.apiVersionForNetworkInterfaces}",
+            "apiVersion": "2015-06-15}",
             "type": "Microsoft.Network/networkInterfaces",
             "name": "[concat(parameters('ohsVMName'), variables('name_nic'))]",
             "location": "[parameters('location')]",

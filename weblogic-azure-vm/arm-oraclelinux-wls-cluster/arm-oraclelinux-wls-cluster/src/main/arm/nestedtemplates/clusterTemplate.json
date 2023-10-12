@@ -513,7 +513,7 @@
             }
         },
         {
-            "apiVersion": "${azure.apiVersionForNetworkInterfaces}",
+            "apiVersion": "2015-06-15}",
             "type": "Microsoft.Network/networkInterfaces",
             "condition": "[equals(parameters('virtualNetworkNewOrExisting'), 'new')]",
             "name": "[if(equals(copyIndex(),0),concat(parameters('adminVMName'),variables('name_nic_with_pub_ip')),concat(variables('const_managedVMPrefix'), copyIndex(),variables('name_nic_with_pub_ip')))]",            "location": "[parameters('location')]",
@@ -547,7 +547,7 @@
         },
         {
             "type": "Microsoft.Network/networkInterfaces",
-            "apiVersion": "${azure.apiVersionForNetworkInterfaces}",
+            "apiVersion": "2015-06-15}",
             "condition": "[equals(parameters('virtualNetworkNewOrExisting'), 'existing')]",
             "name": "[if(equals(copyIndex(),0),variables('name_outputAdminHost_without_pub_ip'),concat(variables('const_managedVMPrefix'), copyIndex(),variables('name_nic_without_pub_ip')))]",
             "location": "[parameters('location')]",

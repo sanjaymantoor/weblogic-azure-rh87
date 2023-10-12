@@ -342,7 +342,7 @@
          "condition": "[and(empty(variables('name_virtualNetwork')), empty(variables('name_subnet')))]"
       },
       {
-         "apiVersion": "${azure.apiVersionForNetworkInterfaces}",
+         "apiVersion": "2015-06-15}",
          "type": "Microsoft.Network/networkInterfaces",
          "name": "[concat(variables('name_vmMachine'),copyIndex(variables('const_appNodeMachineOffset')), variables('name_nic'))]",
          "location": "[parameters('location')]",
