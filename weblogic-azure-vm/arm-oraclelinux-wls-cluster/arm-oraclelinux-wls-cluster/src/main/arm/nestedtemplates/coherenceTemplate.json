@@ -369,7 +369,7 @@
             }
         },
         {
-            "apiVersion": "${azure.apiVersionForPublicIPAddresses}",
+            "apiVersion": "2021-08-01",
             "type": "Microsoft.Network/publicIPAddresses",
             "name": "[concat(variables('name_vmMachine'),copyIndex(1),variables('name_publicIPAddress'))]",
             "location": "[parameters('location')]",
@@ -385,7 +385,7 @@
             }
         },
         {
-            "apiVersion": "${azure.apiVersionForVirtualNetworks}",
+            "apiVersion": "2021-08-01",
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "name": "[concat(variables('name_virtualNetwork'), '/', variables('name_subnet'))]",
             "condition": "[and(empty(variables('name_virtualNetwork')), empty(variables('name_subnet')))]"
@@ -423,7 +423,7 @@
             }
         },
         {
-            "apiVersion": "${azure.apiVersionForVirtualMachines}",
+            "apiVersion": "2021-11-01",
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[concat(variables('name_vmMachine'), copyIndex(1))]",
             "location": "[parameters('location')]",
@@ -481,7 +481,7 @@
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "[if(equals(copyIndex(),0),concat(parameters('adminVMName'),'/newuserscript'),concat(variables('name_vmMachine'), copyIndex(),'/newuserscript'))]",
-            "apiVersion": "${azure.apiVersionForVirtualMachines}",
+            "apiVersion": "2021-11-01",
             "location": "[parameters('location')]",
             "copy": {
                 "name": "virtualMachineExtensionLoop",

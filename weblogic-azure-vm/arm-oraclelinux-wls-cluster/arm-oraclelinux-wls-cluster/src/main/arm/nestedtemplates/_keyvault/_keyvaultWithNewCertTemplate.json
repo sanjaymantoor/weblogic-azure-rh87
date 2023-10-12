@@ -68,7 +68,7 @@
         },
         {
             "type": "Microsoft.Authorization/roleAssignments",
-            "apiVersion": "${azure.apiVersionForRoleAssignment}",
+            "apiVersion": "2022-04-01",
             "name": "[variables('name_roleAssignmentName')]",
             "dependsOn": [
                 "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('name_deploymentScriptUserDefinedManagedIdentity'))]"

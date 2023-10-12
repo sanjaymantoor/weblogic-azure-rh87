@@ -151,7 +151,7 @@
       },
       {
          "type": "Microsoft.Network/networkSecurityGroups",
-         "apiVersion": "${azure.apiVersionForNetworkSecurityGroups}",
+         "apiVersion": "2021-08-01",
          "name": "[variables('name_networkSecurityGroup')]",
          "location": "[parameters('location')]",
          "properties": {
@@ -184,7 +184,7 @@
          "properties": {}
       },
       {
-         "apiVersion": "${azure.apiVersionForPublicIPAddresses}",
+         "apiVersion": "2021-08-01",
          "type": "Microsoft.Network/publicIPAddresses",
          "name": "[variables('name_publicIPAddress')]",
          "location": "[parameters('location')]",
@@ -196,7 +196,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForVirtualNetworks}",
+         "apiVersion": "2021-08-01",
          "type": "Microsoft.Network/virtualNetworks",
          "name": "[variables('name_virtualNetwork')]",
          "location": "[parameters('location')]",
@@ -252,7 +252,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForVirtualMachines}",
+         "apiVersion": "2021-11-01",
          "type": "Microsoft.Compute/virtualMachines",
          "name": "[parameters('vmName')]",
          "location": "[parameters('location')]",
@@ -432,7 +432,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-122140-jdk8-ol76}",
+         "name": "pid-bde756bb-ce96-54d5-a478-04d9bd87e9db",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'from.owls-122140-jdk8-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -450,7 +450,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk8-ol76}",
+         "name": "pid-b6f00a34-1478-5a10-9a84-49c4051b57b8",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -468,7 +468,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk11-ol76}",
+         "name": "pid-afc8f9c5-8c5d-5d1b-ab4d-3116ca908bfd",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -486,7 +486,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-122140-jdk8-rhel87}",
+         "name": "0799976a-84a5-4a59-b74b-bd67c4d37aa5",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-122140-jdk8-rhel87'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -504,7 +504,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk8-rhel87}",
+         "name": "2e471204-8cbe-4aec-9c64-4d0f5f8d590d",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-rhel87'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -522,7 +522,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk11-rhel87}",
+         "name": "b1f76ba8-078d-43bc-b35c-9a4952eb00c9",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-rhel87'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -540,7 +540,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-122140-jdk8-rhel76}",
+         "name": "0a52f317-8b40-4a77-9f3c-7607fc3ebfb7wls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-122140-jdk8-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -558,7 +558,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk8-rhel76}",
+         "name": "26ec5cf5-dd84-4764-97cf-4f830facbf66wls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
@@ -576,7 +576,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk11-rhel76}",
+         "name": "ada2e3e6-faef-4339-aaac-40bcdc4484ecwls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"

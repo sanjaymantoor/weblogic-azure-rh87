@@ -337,7 +337,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForNetworkSecurityGroups}",
+         "apiVersion": "2021-08-01",
          "type": "Microsoft.Network/networkSecurityGroups",
          "condition": "[equals(parameters('virtualNetworkNewOrExisting'), 'new')]",
          "name": "[variables('name_networkSecurityGroup')]",
@@ -403,7 +403,7 @@
          ]
       },
       {
-         "apiVersion": "${azure.apiVersionForPrivateEndpoint}",
+         "apiVersion": "2021-05-01",
          "name": "[variables('name_privateSaEndpoint')]",
          "type": "Microsoft.Network/privateEndpoints",
          "location": "[parameters('location')]",
@@ -452,7 +452,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForPublicIPAddresses}",
+         "apiVersion": "2021-08-01",
          "type": "Microsoft.Network/publicIPAddresses",
          "condition": "[equals(parameters('virtualNetworkNewOrExisting'), 'new')]",
          "name": "[variables('name_publicIPAddress')]",
@@ -465,7 +465,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForVirtualNetworks}",
+         "apiVersion": "2021-08-01",
          "type": "Microsoft.Network/virtualNetworks",
          "condition": "[equals(parameters('virtualNetworkNewOrExisting'), 'new')]",
          "name": "[variables('name_virtualNetwork')]",
@@ -541,7 +541,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForVirtualMachines}",
+         "apiVersion": "2021-11-01",
          "type": "Microsoft.Compute/virtualMachines",
          "name": "[parameters('adminVMName')]",
          "location": "[parameters('location')]",
@@ -595,7 +595,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForVirtualMachines}",
+         "apiVersion": "2021-11-01",
          "type": "Microsoft.Compute/virtualMachines/extensions",
          "name": "[concat(parameters('adminVMName'),'/newuserscript')]",
          "location": "[parameters('location')]",
@@ -619,7 +619,7 @@
                ]
             },
             "protectedSettings": {
-               "commandToExecute": "[concat('sh',' ',variables('name_scriptFile'),' <<< \"',parameters('wlsDomainName'),' ',parameters('wlsUserName'),' ',parameters('wlsPassword'),' ',parameters('adminVMName'),' ', variables('const_wlsHome'),' ',variables('name_storageAccount'),' ',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('name_storageAccount')), '${azure.apiVersionForStorage}').keys[0].value,' ',variables('const_mountPointPath'),' ',string(parameters('enableHTTPAdminListenPort')),' ',if(equals(parameters('virtualNetworkNewOrExisting'), 'new'), if(parameters('enableCustomDNS'), parameters('customDNSName'), reference(variables('name_publicIPAddress')).dnsSettings.fqdn), reference(variables('name_nic_without_pub_ip')).ipConfigurations[0].properties.privateIPAddress),' ',parameters('dnsLabelPrefix'),' ',parameters('location'),' ',parameters('virtualNetworkNewOrExisting'),' ',reference(resourceId('Microsoft.Network/privateEndpoints/', variables('name_privateSaEndpoint')), '${azure.apiVersionForPrivateEndpoint}').customDnsConfigs[0].ipAddresses[0],' ',string(parameters('enableCustomSSL')),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomIdentityKeyStoreData')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomIdentityKeyStorePassPhrase')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomIdentityKeyStoreType')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomTrustKeyStoreData')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomTrustKeyStorePassPhrase')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomTrustKeyStoreType')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultPrivateKeyAlias')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultPrivateKeyPassPhrase')),''),'\"')]"            }
+               "commandToExecute": "[concat('sh',' ',variables('name_scriptFile'),' <<< \"',parameters('wlsDomainName'),' ',parameters('wlsUserName'),' ',parameters('wlsPassword'),' ',parameters('adminVMName'),' ', variables('const_wlsHome'),' ',variables('name_storageAccount'),' ',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('name_storageAccount')), '${azure.apiVersionForStorage}').keys[0].value,' ',variables('const_mountPointPath'),' ',string(parameters('enableHTTPAdminListenPort')),' ',if(equals(parameters('virtualNetworkNewOrExisting'), 'new'), if(parameters('enableCustomDNS'), parameters('customDNSName'), reference(variables('name_publicIPAddress')).dnsSettings.fqdn), reference(variables('name_nic_without_pub_ip')).ipConfigurations[0].properties.privateIPAddress),' ',parameters('dnsLabelPrefix'),' ',parameters('location'),' ',parameters('virtualNetworkNewOrExisting'),' ',reference(resourceId('Microsoft.Network/privateEndpoints/', variables('name_privateSaEndpoint')), '2021-05-01').customDnsConfigs[0].ipAddresses[0],' ',string(parameters('enableCustomSSL')),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomIdentityKeyStoreData')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomIdentityKeyStorePassPhrase')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomIdentityKeyStoreType')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomTrustKeyStoreData')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomTrustKeyStorePassPhrase')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultCustomTrustKeyStoreType')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultPrivateKeyAlias')),''),' ',if(parameters('enableCustomSSL'),base64(parameters('keyVaultPrivateKeyPassPhrase')),''),'\"')]"            }
          }
       },
       {
@@ -767,7 +767,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-122140-jdk8-ol76}",
+         "name": "pid-bde756bb-ce96-54d5-a478-04d9bd87e9db",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'from.owls-122140-jdk8-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('adminVMName'), 'newuserscript')]"
@@ -785,7 +785,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk8-ol76}",
+         "name": "pid-b6f00a34-1478-5a10-9a84-49c4051b57b8",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('adminVMName'), 'newuserscript')]"
@@ -803,7 +803,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk11-ol76}",
+         "name": "pid-afc8f9c5-8c5d-5d1b-ab4d-3116ca908bfd",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('adminVMName'), 'newuserscript')]"
@@ -821,7 +821,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-122140-jdk8-rhel76}",
+         "name": "0a52f317-8b40-4a77-9f3c-7607fc3ebfb7wls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-122140-jdk8-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('adminVMName'), 'newuserscript')]"
@@ -839,7 +839,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk8-rhel76}",
+         "name": "26ec5cf5-dd84-4764-97cf-4f830facbf66wls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('adminVMName'), 'newuserscript')]"
@@ -857,7 +857,7 @@
       {
          "type": "Microsoft.Resources/deployments",
          "apiVersion": "${azure.apiVersionForDeployment}",
-         "name": "${from.owls-141100-jdk11-rhel76}",
+         "name": "ada2e3e6-faef-4339-aaac-40bcdc4484ecwls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
             "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('adminVMName'), 'newuserscript')]"
