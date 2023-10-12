@@ -308,7 +308,7 @@
    "resources": [
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${dynamic.addnode.start}",
          "properties": {
             "mode": "Incremental",
@@ -463,7 +463,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${dynamic.addnode.end}",
          "dependsOn": [
             "virtualMachineExtensionLoop"

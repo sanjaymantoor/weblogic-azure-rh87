@@ -309,7 +309,7 @@
    },
    "resources": [
       {
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${admin.admin.start}",
          "type": "Microsoft.Resources/deployments",
          "properties": {
@@ -323,7 +323,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${admin.ssl.start}",
          "type": "Microsoft.Resources/deployments",
          "properties": {
@@ -623,7 +623,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${admin.ssl.end}",
          "type": "Microsoft.Resources/deployments",
          "dependsOn": [
@@ -640,7 +640,7 @@
          }
       },
       {
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${admin.admin.end}",
          "type": "Microsoft.Resources/deployments",
          "dependsOn": [
@@ -658,7 +658,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${from.owls-141100-jdk11-ol91}",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-ol91'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -676,7 +676,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${from.owls-141100-jdk11-ol87}",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-ol87'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -694,7 +694,7 @@
       },	
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${from.owls-141100-jdk8-ol91}",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-ol91'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -712,7 +712,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${from.owls-141100-jdk8-ol87}",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-ol87'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -730,7 +730,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${from.owls-122140-jdk8-ol91}",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-122140-jdk8-ol91'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -748,7 +748,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "${from.owls-122140-jdk8-ol87}",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-122140-jdk8-ol87'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -766,7 +766,7 @@
       },      
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "pid-bde756bb-ce96-54d5-a478-04d9bd87e9db",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'from.owls-122140-jdk8-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -784,7 +784,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "pid-b6f00a34-1478-5a10-9a84-49c4051b57b8",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -802,7 +802,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "pid-afc8f9c5-8c5d-5d1b-ab4d-3116ca908bfd",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-ol76'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -820,7 +820,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "0a52f317-8b40-4a77-9f3c-7607fc3ebfb7wls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-122140-jdk8-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -838,7 +838,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "26ec5cf5-dd84-4764-97cf-4f830facbf66wls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk8-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [
@@ -856,7 +856,7 @@
       },
       {
          "type": "Microsoft.Resources/deployments",
-         "apiVersion": "${azure.apiVersionForDeployment}",
+         "apiVersion": "2023-07-01",
          "name": "ada2e3e6-faef-4339-aaac-40bcdc4484ecwls",
          "condition": "[if(contains(variables('name_linuxImageOfferSKU'), 'owls-141100-jdk11-rhel76'), bool('true'), bool('false'))]",
          "dependsOn": [

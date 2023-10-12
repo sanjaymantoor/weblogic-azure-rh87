@@ -283,7 +283,7 @@
     ],
     "resources": [
         {
-            "apiVersion": "${azure.apiVersionForDeployment}",
+            "apiVersion": "2023-07-01",
             "name": "${cluster.addnode.coherence.start}",
             "type": "Microsoft.Resources/deployments",
             "properties": {
@@ -439,7 +439,7 @@
             }
         },
         {
-            "apiVersion": "${azure.apiVersionForDeployment}",
+            "apiVersion": "2023-07-01",
             "name": "${cluster.addnode.coherence.end}",
             "type": "Microsoft.Resources/deployments",
             "dependsOn": [

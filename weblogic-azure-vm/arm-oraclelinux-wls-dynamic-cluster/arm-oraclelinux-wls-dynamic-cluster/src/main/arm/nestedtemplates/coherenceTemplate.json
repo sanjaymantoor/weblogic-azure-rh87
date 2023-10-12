@@ -356,7 +356,7 @@
     ],
     "resources": [
         {
-            "apiVersion": "${azure.apiVersionForDeployment}",
+            "apiVersion": "2023-07-01",
             "name": "${dynamic.coherence.start}",
             "type": "Microsoft.Resources/deployments",
             "properties": {
@@ -512,7 +512,7 @@
             }
         },
         {
-            "apiVersion": "${azure.apiVersionForDeployment}",
+            "apiVersion": "2023-07-01",
             "name": "${dynamic.coherence.end}",
             "type": "Microsoft.Resources/deployments",
             "dependsOn": [
