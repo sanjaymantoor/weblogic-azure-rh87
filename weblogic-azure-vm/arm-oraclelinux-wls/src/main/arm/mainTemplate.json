@@ -174,7 +174,7 @@
       },
       {
          "type": "Microsoft.Storage/storageAccounts",
-         "apiVersion": "${azure.apiVersionForStorage}",
+         "apiVersion": "2023-01-01",
          "name": "[variables('name_storageAccount')]",
          "location": "[parameters('location')]",
          "sku": {
@@ -295,7 +295,7 @@
             "diagnosticsProfile": {
                "bootDiagnostics": {
                   "enabled": true,
-                  "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('name_storageAccount')), '${azure.apiVersionForStorage}').primaryEndpoints.blob]"
+                  "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('name_storageAccount')), '2023-01-01').primaryEndpoints.blob]"
                }
             }
          },
