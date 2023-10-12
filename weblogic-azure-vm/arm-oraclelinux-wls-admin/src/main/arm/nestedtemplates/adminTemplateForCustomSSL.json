@@ -491,7 +491,7 @@
          }
       },
       {
-         "apiVersion": "2015-06-15}",
+         "apiVersion": "2015-06-15",
          "type": "Microsoft.Network/networkInterfaces",
          "condition": "[equals(parameters('virtualNetworkNewOrExisting'), 'new')]",
          "name": "[variables('name_nic_with_pub_ip')]",
@@ -521,7 +521,7 @@
          }
       },
       {
-         "apiVersion": "2015-06-15}",
+         "apiVersion": "2015-06-15",
          "type": "Microsoft.Network/networkInterfaces",
          "condition": "[equals(parameters('virtualNetworkNewOrExisting'), 'existing')]",
          "name": "[variables('name_nic_without_pub_ip')]",

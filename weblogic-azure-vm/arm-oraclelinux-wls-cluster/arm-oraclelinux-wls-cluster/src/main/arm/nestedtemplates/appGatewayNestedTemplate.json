@@ -308,7 +308,7 @@
 									"name": "BackendAddresses",
 									"count": "[sub(int(parameters('numberOfInstances')),1)]",
 									"input": {
-										"ipAddress": "[reference(resourceId('Microsoft.Network/networkInterfaces', concat(variables('const_managedVMPrefix'), copyIndex('BackendAddresses',1), if(equals(parameters('virtualNetworkNewOrExisting'), 'new'), variables('name_nic_with_pub_ip'), variables('name_nic_without_pub_ip')))),'2015-06-15}').ipConfigurations[0].properties.privateIPAddress]"
+										"ipAddress": "[reference(resourceId('Microsoft.Network/networkInterfaces', concat(variables('const_managedVMPrefix'), copyIndex('BackendAddresses',1), if(equals(parameters('virtualNetworkNewOrExisting'), 'new'), variables('name_nic_with_pub_ip'), variables('name_nic_without_pub_ip')))),'2015-06-15').ipConfigurations[0].properties.privateIPAddress]"
 									}
 								}
 							]
